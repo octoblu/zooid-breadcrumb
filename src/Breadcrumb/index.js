@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import React, { PropTypes } from 'react'
 
-import './styles.css'
+import styles from './styles.css'
 
 const Breadcrumb = (props) => {
   const { className, fragments } = props
@@ -9,9 +9,9 @@ const Breadcrumb = (props) => {
   const fragmentNodes = fragments.map((fragment, key) => {
     const { label, slug, component } = fragment
     const fragmentClasses = classNames(
-      'Breadcrumb-fragment',
-      { 'Breadcrumb-fragment--link': slug },
-      { 'Breadcrumb-fragment--link': component }
+      styles.fragment,
+      { [`${styles.fragmentLink}`]: slug },
+      { [`${styles.fragmentLink}`]: component }
     )
 
     if (component) return React.cloneElement(component, { className: fragmentClasses, key })
@@ -19,7 +19,7 @@ const Breadcrumb = (props) => {
     return <span className={fragmentClasses} key={key}>{label}</span>
   })
 
-  const classes = classNames('Breadcrumb', className)
+  const classes = classNames(styles.Breadcrumb, className)
   return <nav role="navigation" className={classes}>{fragmentNodes}</nav>
 }
 

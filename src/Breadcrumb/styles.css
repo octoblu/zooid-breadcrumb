@@ -3,7 +3,7 @@
   flex: 1;
 }
 
-.Breadcrumb-fragment {
+.fragment {
   display: inline-block;
   padding: 0;
 
@@ -15,22 +15,22 @@
   line-height: 50px;
 }
 
-.Breadcrumb-fragment--link {
+.fragmentLink {
   color: #14568f;
   font-family: 'citrixsans-regular', sans-serif;
   cursor: pointer;
 }
 
-.Breadcrumb-fragment--link:hover {
+.fragmentLink:hover {
   text-decoration: underline;
 }
 
-.Breadcrumb-fragment:not(:first-child) {
+.fragment:not(:first-child) {
   position: relative;
   padding-left: 24px;
 }
 
-.Breadcrumb-fragment:not(:first-child):before {
+.fragment:not(:first-child):before {
   content: "/";
   color: #babbbf;
   font-family: 'citrixsans-regular', sans-serif;
